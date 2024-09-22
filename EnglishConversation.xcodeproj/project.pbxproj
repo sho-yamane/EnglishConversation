@@ -82,6 +82,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4AC3ACA92C9FB78600B151E7 /* Build configuration list for PBXNativeTarget "EnglishConversation" */;
 			buildPhases = (
+				4AC3ACF72C9FC8F600B151E7 /* ShellScript */,
 				4AC3AC8D2C9FB78500B151E7 /* Sources */,
 				4AC3AC8E2C9FB78500B151E7 /* Frameworks */,
 				4AC3AC8F2C9FB78500B151E7 /* Resources */,
@@ -148,6 +149,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4AC3ACF72C9FC8F600B151E7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f \"$SRCROOT/.env\" ]; then\n  export $(cat \"$SRCROOT/.env\" | xargs)\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4AC3AC8D2C9FB78500B151E7 /* Sources */ = {

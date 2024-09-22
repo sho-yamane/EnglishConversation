@@ -9,25 +9,32 @@ import SwiftUI
 
 @main
 struct EnglishConversationApp: App {
-
-    @State private var appModel = AppModel()
+    @State private var sharedViewModel = SharedViewModel()
 
     var body: some Scene {
-        WindowGroup {
+        WindowGroup(id: "mainWindow") {
             MainWindow()
-                .environment(appModel)
+                .environment(sharedViewModel)
         }
-
-        ImmersiveSpace(id: appModel.immersiveSpaceID) {
-            ImmersiveView()
-                .environment(appModel)
-                .onAppear {
-                    appModel.immersiveSpaceState = .open
-                }
-                .onDisappear {
-                    appModel.immersiveSpaceState = .closed
-                }
+        
+        WindowGroup(id: "inputWindow") {
+            InputWindow()
+                .environment(sharedViewModel)
         }
-        .immersionStyle(selection: .constant(.mixed), in: .mixed)
-     }
+        .windowStyle(.plain)
+        .windowResizability(.contentSize)
+        
+        WindowGroup(id: "scriptWindow") {
+            ScriptWindow()
+                .environment(sharedViewModel)
+        }
+        .defaultSize(width: 500, height: 1000)
+        
+        WindowGroup(id: "avatarWindow") {
+            AvatorWindow()
+                .environment(sharedViewModel)
+        }
+        .defaultSize(width: 2500, height: 2500, depth: 1000)
+        .windowStyle(.volumetric)
+    }
 }
