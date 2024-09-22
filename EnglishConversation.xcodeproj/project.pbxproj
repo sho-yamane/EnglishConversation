@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4AC3AC972C9FB78500B151E7 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 4AC3AC962C9FB78500B151E7 /* RealityKitContent */; };
+		4AC3ACC42C9FBF9900B151E7 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 4AC3ACC32C9FBF9900B151E7 /* GoogleGenerativeAI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AC3AC972C9FB78500B151E7 /* RealityKitContent in Frameworks */,
+				4AC3ACC42C9FBF9900B151E7 /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +96,7 @@
 			name = EnglishConversation;
 			packageProductDependencies = (
 				4AC3AC962C9FB78500B151E7 /* RealityKitContent */,
+				4AC3ACC32C9FBF9900B151E7 /* GoogleGenerativeAI */,
 			);
 			productName = EnglishConversation;
 			productReference = 4AC3AC912C9FB78500B151E7 /* EnglishConversation.app */;
@@ -123,6 +126,9 @@
 			);
 			mainGroup = 4AC3AC882C9FB78500B151E7;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				4AC3ACC22C9FBF9900B151E7 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4AC3AC922C9FB78500B151E7 /* Products */;
 			projectDirPath = "";
@@ -348,10 +354,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		4AC3ACC22C9FBF9900B151E7 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/generative-ai-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		4AC3AC962C9FB78500B151E7 /* RealityKitContent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RealityKitContent;
+		};
+		4AC3ACC32C9FBF9900B151E7 /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AC3ACC22C9FBF9900B151E7 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

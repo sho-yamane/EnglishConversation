@@ -14,7 +14,7 @@ struct EnglishConversationApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainWindow()
                 .environment(appModel)
         }
 
